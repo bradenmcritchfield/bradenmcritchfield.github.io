@@ -23,7 +23,7 @@ email: bradenmcritchfield@gmail.com
 description: "A blog demonstrating the ways data science can be used in the legal field." 
 baseurl: # the name of the repository 
 url: "https://bradenmcritchfield.github.io" #  change this to "https://<your-github-username>.github.io"
-image: https://unsplash.com/photos/pgTJ9rSzEsA
+image: assets/images/utahmountainsunsplash.jpg
 author: Braden Critchfield
 copyright: BC # Your initials or what you want the copyright to be.  Leave empty for no copyright
 footer_description:
