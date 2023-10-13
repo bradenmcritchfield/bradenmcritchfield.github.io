@@ -3,7 +3,7 @@ layout: post
 title:  "Poisson Sports Prediction Tutorial"
 author: Braden Critchfield
 description: A short tutorial explaining how to use poisson distributions to calculate the probability of sport outcomes.
-image: /assets/images/blog-image.jpg
+image: /assets/images/baseball.jpg
 ---
 
 When the improbable victory occurs, it feels magical. When the unlikely defeat happens, it feels tragic. The randomness of games and sports is part of what makes the enjoyable. Understanding this randomness and getting a sense as to how likely or unlikely something is to occur can help one better appreciate the feat one’s witnessed.
