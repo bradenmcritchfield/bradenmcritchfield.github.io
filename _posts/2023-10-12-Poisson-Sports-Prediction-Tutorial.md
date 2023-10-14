@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Poisson Sports Prediction Tutorial"
+title:  "Predictions in Sports using Poisson Distributions"
 author: Braden Critchfield
 description: A short tutorial explaining how to use poisson distributions to calculate the probability of sport outcomes.
 image: /assets/images/baseball2.jpg
