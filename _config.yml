@@ -18,9 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Data Science and Law
+title: Exploring the World through Data
 email: bradenmcritchfield@gmail.com 
-description: "A blog demonstrating the ways data science can be used in the legal field." 
+description: "An exploration of the ways data science can be used to explore hobbies, sports, etc." 
 baseurl: # the name of the repository 
 url: "https://bradenmcritchfield.github.io" #  change this to "https://<your-github-username>.github.io"
 image: ./assets/images/utahmountainsunsplash.jpg
