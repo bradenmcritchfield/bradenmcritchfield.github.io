@@ -14,7 +14,7 @@ Using simple probability distributions, we can quickly determine the probability
 The Poisson distribution is a statistical distribution that uses the average occurences in a given amount of time or space to give the probability of an event occurring a certain number of times in that same amount of time or space. In the context of sports, this occurence can be the number of points scored per minute, the number of runs scored per inning, etc. By using the poisson distribution, it allows us to find the probabilities that a team will score x number of points/runs/goals in a k amount of time remaining. Then, by comparing this to the distribution of the other team, we can quickly find the probability of a team scoring more than the other team by the end of the game. 
 
 # Putting it into Practice
-## 1988 Kirk Gibson Home Run
+## Probability for 1 Team: 1988 Kirk Gibson Home Run
 
 For this example, we’ll look at baseball. In baseball, the unit of time is an out. Three outs make up an inning, and once a team completes 9 innings, they no longer have an opportunity to score runs. This is an imperfect unit of time since the length of time between each out can differ, but for a simple example it can work. Because this is a simple model, we’ll ignore effects like opponent and pitcher, and assume independence between each occurrence.
 On October 15, 1988, the Los Angeles Dodgers were playing the Oakland Athletics in the World Series. The Dodgers were down 4-3 in the final inning. This was the Dodgers final opportunity to win the first game of the Series. What was their odds of winning the game? We can use python to find out.
@@ -34,7 +34,7 @@ Poisson.cdf requires the parameters k (the outcome we are finding the probabilit
 
 In this case, the probability comes out to be 0.97%. What actually happened was just as incredible. The Dodgers spent two outs and got one runner on base. They turned to their injured star, Kirk Gibson, to attempt to win the game. Literally hobbling up to bat against the Athletics' best pitcher, Kirk Gibson hit a home run and won the game for Dodgers, who went on to win the rest of the World Series. [Watching Kirk Gibson's at bat unfold](https://www.youtube.com/watch?v=Db2sFZVGxJ4), the 1% chance of the Dodgers winning feels like magic.
 
-## Example 2: 1996 Utah Jazz comeback
+## Probability for 2 Teams: 1996 Utah Jazz Comeback
 The Dodgers example only involves one team; how do we approach comparing two teams? To solve this, we'll look at the greatest comeback in the National Basketball Association. 
 The Utah Jazz were down 36 points halfway through a game in November of 1996. If you were a fan (or even alive) at this time, you probably knew it was extremely unlikely the Jazz would come back to win the game. But how unlikely? 
 
@@ -76,6 +76,7 @@ Deficitprobabilities.sum()*100
 
 According to our simple model, there was a .03% of the Jazz winning. Talk about improbable!
 
+# Conclusion
 To build more complex models, you can take into account other factors, such as defense of the opposing team, average when under similar factors, etc. However, a simple Poisson model works well in a pinch! Next time you watch a sporting event, try a simple poisson model to see who is favored to win, or to see the probability a team holds on to their lead throughout the game. Because this model applies to any sport where occurrences occur in an amount of time, this works for soccer, baseball, basketball, football, hockey, and more. As you put this into practice, you can quantify the highs and lows of following sports by capturing how improbable it was!
 
 
