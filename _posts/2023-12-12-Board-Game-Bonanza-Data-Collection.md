@@ -31,7 +31,7 @@ parameter2 = "&stats=1&marketplace=1"
 ```
 
 Each api pull will result in an XML file, that looks a little like this:
-![XML api pull example](/assets/images/Sample XML file.png)
+![XML api pull example](assets/images/Sample XML file.png)
 
 
 ## Pulling information from the XML files
