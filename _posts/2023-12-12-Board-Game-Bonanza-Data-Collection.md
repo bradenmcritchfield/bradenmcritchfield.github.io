@@ -88,6 +88,7 @@ avg_USD_price = []
 ```
 
 Finally, we need to loop through our list of IDs to pull the XML file for each board game, and pull the data we want from the XML file. A for loop is not the most time effective, but it was the best way I could think of to pull the api for each ID. Notice that there is a request delay of 10 seconds so requests don't get throttled. For the most part, this code uses Bautiful Soup to pull much of the data. USD price data is calulated by summing up all the listings in USD dollars and then dividing it by the number of listings.
+**Warning: This a long time to run.**
 
 ```
 for x in range(0,len(ids)):
