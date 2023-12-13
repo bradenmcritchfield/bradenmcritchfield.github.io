@@ -17,7 +17,7 @@ BoardGameGeek offers an api that allows the user to access data on a game by gam
 
 So all credit for this data is given to BoardGameGeek. Here is their logo:
 
-[BGG logo](../../assets/images/BGG.webp)
+![BGG logo](../../assets/images/BGG.webp)
 
 ## Accessing the API
 4. Access their api
