@@ -17,11 +17,22 @@ BoardGameGeek offers an api that allows the user to access data on a game by gam
 
 So all credit for this data is given to BoardGameGeek. Here is their logo:
 
-![BGG logo](../assets/images/BGG.webp)
+![BGG logo](/assets/images/BGG.webp)
 
 ## Accessing the API
-4. Access their api
-5. Show what api accesses
+Board Game geek has [an explanation of their api](https://boardgamegeek.com/wiki/page/BGG_XML_API2).
+
+To access the data for each board game, we need the base url, the endpoint, parameters (an id and set the api to show stats and marketpace data).
+```
+baseurl = "https://boardgamegeek.com/xmlapi2"
+endpoint = "/thing?id="
+parameter1 = str(ids[0])
+parameter2 = "&stats=1&marketplace=1"
+```
+
+Each api pull will result in an XML file, that looks a little like this:
+![XML api pull example](/assets/images/Sample XML file.png)
+
 
 ## Pulling information from the XML files
 7. download CSV file to get IDs
