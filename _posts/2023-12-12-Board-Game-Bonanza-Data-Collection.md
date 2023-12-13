@@ -131,19 +131,22 @@ boardGames.to_csv("boardgamesdata.csv")
 # Data Cleaning and Engineering
 The data now needs to be cleaned and engineered.
 
-1. Create the new variable of age of game, change the playing time variable to be an integer, and set the other numeric columns to be numeric.
+1. Create the new variable of age of game (by subtracting the year published from 2023, the year the data was pulled), change the playing time variable to be an integer, and set the other numeric columns to be numeric.
 ```
 boardGames["Age (Years)"] = 2023 - boardGames["Year Published"].astype(int)
 boardGames["Playing Time"] = boardGames["Playing Time"].astype(int)
 num_cols = ["Year Published", "Min Players", "Max Players", "Age Minimum", "Number of Accessories", "Number of Ratings", "Average Rating", "Bayes Rating", "Standard Deviation", "Average USD Price"]
 boardGames[num_cols] = boardGames[num_cols].apply(pd.to_numeric)
 ```
-2. Create categories for estimated playing time, recommended minimum age, and maximum playing group
+2. Create categories for estimated playing time, recommended minimum age, and maximum playing group. We can do this by using pandas cut function, which assigns numeric values to labelled bins you determine.
 ```
 boardGames["Time Category"] = pd.cut(boardGames["Playing Time"], bins=[0,31,61,91,181,301,1501], labels = ["Quick", "Short", "Moderate", "Long", "Very Long", "Marathon"])
 boardGames["AgeRating"] = pd.cut(boardGames["Age Minimum"], bins=[0,5,8,12,16,24], labels = ["Any", "Young", "PreTeen", "Teen", "Adult"])
 boardGames["GroupSize"] = pd.cut(boardGames["Max Players"], bins=[0, 1, 4, 8, 101], labels = ["Individual", "Small", "Large", "Massive"])
 boardGames.to_csv("boardgamesdata.csv", index = False)
 ```
+
+The first five rows of the resulting data frame should look something like this:
+![Boardgames dataframe](/assets/images/BoardGamesDataframe.png)
 
 Congratulations! We now have data for the top 1000 board games that we can now explore. In the next article, we'll explore this data to find what features these popular board games share.
