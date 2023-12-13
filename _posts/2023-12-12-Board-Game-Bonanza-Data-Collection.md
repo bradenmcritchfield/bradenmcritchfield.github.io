@@ -31,7 +31,7 @@ parameter2 = "&stats=1&marketplace=1"
 ```
 
 Each api pull will result in an XML file, that looks a little like this:
-![XML api pull example](assets/images/SampleXMLfile.png)
+![XML api pull example](/assets/images/SampleXMLfile.png)
 
 ## Pulling information from the XML files
 Because each api pull does not result in all the board game data, but the data for one board game, we need to set up a process to pull data for all the board games we want. To do this, we need the IDs for each board game we want to pull. Luckily, on the api explanation page, BGG provides a csv file with data on every board game. Unfortuantely, this does not include much of the data we want, but we can use this csv for IDs of board games to pull.
