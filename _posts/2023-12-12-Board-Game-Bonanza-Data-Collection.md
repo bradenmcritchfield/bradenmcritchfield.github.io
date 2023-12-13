@@ -144,3 +144,5 @@ boardGames["AgeRating"] = pd.cut(boardGames["Age Minimum"], bins=[0,5,8,12,16,24
 boardGames["GroupSize"] = pd.cut(boardGames["Max Players"], bins=[0, 1, 4, 8, 101], labels = ["Individual", "Small", "Large", "Massive"])
 boardGames.to_csv("boardgamesdata.csv", index = False)
 ```
+
+Congratulations! We now have data for the top 1000 board games that we can now explore. In the next article, we'll explore this data to find what features these popular board games share.
