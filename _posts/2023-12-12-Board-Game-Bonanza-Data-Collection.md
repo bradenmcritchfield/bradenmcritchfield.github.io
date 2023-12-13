@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Board Game Bonanza: Data Colleciton and Wrangling"
+title:  "Board Game Bonanza: Data Collection and Wrangling"
 author: Braden Critchfield
 description: A short tutorial explaining how to collect and clean data relating to board games.
 image: /assets/images/GameImage.jpg
