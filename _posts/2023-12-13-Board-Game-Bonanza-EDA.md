@@ -20,15 +20,15 @@ Because this is the top 1000 board games and not all the board games (due to tim
 # What are the distributional breakdowns of each factor in our data? What outliers are interesting?
 First, let's take a look at the distributions of our data. This first figure shows the histograms for our three categorical variables: group size, length of time, and age rating. 
 
-![CategoricalHistograms](/assets/images/CatHists.png]
+![CategoricalHistograms](/assets/images/CatHists.png)
 
 The vast majority of these top 1000 games are in the center of these 3 groups: Small - Large groups (but not too small or too large), short to long (but not quick or too long), and are rated for preteeens and teens (not too young but not too adult either). Whether this is because there are just more of games with these factors in general, or because these receive higher ratings is the question that can only be answered by looking at more data.
 
 We will also take a look at the distributions of our numerical data. Unfortunately, some of these graphs are impacted by outliers:
 
-![Numerical Variables](/assets/images/ContHistplots1.png]
-![More Numerical Variables](/assets/images/ContHistplots2.png]
-![And More Numerical Variables](/assets/images/ContHistplots3.png]
+![Numerical Variables](/assets/images/ContHistplots1.png)
+![More Numerical Variables](/assets/images/ContHistplots2.png)
+![And More Numerical Variables](/assets/images/ContHistplots3.png)
 
 I adjusted these graphs to account for outliers. I changed the year published distribution to leave out the 6 games that are pre-1950 (one game, Go, was from 2000 B.C.E. which made it difficult to see the graph). I removed the 4 games that have max players of 99-100 players. For the distribution of playing times, I removed two games with a playing time of 20 hours. The Average Price distribution has "Magic: The Gathering" left out, because it has an average price in the $7000s (probably due to the rarity of some cards). There are some other outliers I left in; for example, there are 11 games with over 80,000 ratings. But I removed the outliers that made the graphs difficult to see, and I wanted to note them because they are different than the vast majority of the games.
 
