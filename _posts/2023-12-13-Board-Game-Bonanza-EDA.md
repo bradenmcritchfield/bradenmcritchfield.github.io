@@ -8,6 +8,10 @@ image: /assets/images/GameImage.jpg
 
 In a previous post, I showed how we can collect data to find what makes a board game popular. In this post, we'll use python to explore that data.
 
+As a reminder, all data comes from BoardGamesGeek!
+
+![BGG logo](/assets/images/BGG.webp)
+
 # What is in our data?
 
 # What are the breakdowns of each factor in our data?
