@@ -42,6 +42,7 @@ Some of my takeaways for these distributions and what they tell us about the mos
 Next, let's take a look at how the variables are all related through a correlation plot.
 
 ![Correlation Matrix](/assets/images/correlationmatrix.png)
+
 And here is a correlation matrix with a few outliers removed, which could skew the correlation:
 ![Correlation Matrix](/assets/images/correlationmatrixnew.png)
 
