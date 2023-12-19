@@ -6,7 +6,7 @@ description: An exploration of the top 1000 rated board games.
 image: /assets/images/GameImage.jpg
 ---
 
-In a [previous post](/2023-12-12-Board-Game-Bonanza-Data-Collection.md), I showed how we can collect data to find what makes a board game popular. In this post, we'll use python to explore that data.
+In a [previous post](https://bradenmcritchfield.github.io/2023/12/12/Board-Game-Bonanza-Data-Collection.html), I showed how we can collect data to find what makes a board game popular. In this post, we'll use python to explore that data.
 
 As a reminder, all data comes from BoardGamesGeek!
 
