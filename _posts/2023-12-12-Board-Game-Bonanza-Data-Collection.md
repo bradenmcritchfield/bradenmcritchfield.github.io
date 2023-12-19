@@ -13,16 +13,16 @@ To explore this question, first we need to find data on popular board games. We'
 # Data Source
 One great source of board game data is [BoardGameGeek](https://boardgamegeek.com/). This website is an online database and community for those who love board games. Not only does it have information about hundreds and thousands of board and card games, but it also allows users to rate and sell board games on the website. Because of this, we can find data about each board game's requirements, it's popularity, and it's value.
 
-BoardGameGeek offers an api that allows the user to access data on a game by game basis. Before accessing the api, it's best to check the [Terms of Service](https://boardgamegeek.com/wiki/page/XML_API_Terms_of_Use#). The good news is that we are able to use this data for non-commercial use. We just need to credit Board Games Geek by including its logo in public facing uses of the api.
+BoardGameGeek offers an API that allows the user to access data on a game by game basis. Before accessing the API, it's best to check the [Terms of Service](https://boardgamegeek.com/wiki/page/XML_API_Terms_of_Use#). The good news is that we are able to use this data for non-commercial use. We just need to credit Board Games Geek by including its logo in public facing uses of the API.
 
 So all credit for this data is given to BoardGameGeek. Here is their logo:
 
 ![BGG logo](/assets/images/BGG.webp)
 
 ## Accessing the API
-Board Game Geek has [an explanation of their api](https://boardgamegeek.com/wiki/page/BGG_XML_API2).
+Board Game Geek has [an explanation of their API](https://boardgamegeek.com/wiki/page/BGG_XML_API2).
 
-To access the data for each board game, we need the base url, the endpoint, parameters (an id and set the api to show stats and marketpace data).
+To access the data for each board game, we need the base url, the endpoint, parameters (set the id of the game and whether to show stats and marketplace data).
 ```
 baseurl = "https://boardgamegeek.com/xmlapi2"
 endpoint = "/thing?id="
@@ -30,13 +30,13 @@ parameter1 = str(ids[0])
 parameter2 = "&stats=1&marketplace=1"
 ```
 
-Each api pull will result in an XML file, that looks a little like this:
-![XML api pull example](/assets/images/SampleXMLfile.png)
+Each API pull will result in an XML file, that looks a little like this:
+![XML API pull example](/assets/images/SampleXMLfile.png)
 
-## Pulling information from the XML files
-Because each api pull does not result in all the board game data, but the data for one board game, we need to set up a process to pull data for all the board games we want. To do this, we need the IDs for each board game we want to pull. Luckily, on the api explanation page, BGG provides a csv file with data on every board game. Unfortuantely, this does not include much of the data we want, but we can use this csv for IDs of board games to pull.
+## Prepping the API pull
+Because each API pull does not result in all the board game data, but the data for one board game, we need to set up a process to pull data for all the board games we want. To do this, we need the IDs for each board game we want to pull. Luckily, on the API explanation page, BGG provides a csv file with data on every board game. Unfortuantely, this does not include much of the data we want, but we can use this csv for IDs of board games to pull.
 
-To download the .csv file, you need to make an account with BGG. Once you have an account, you can download this file from the api explanation page.
+To download the .csv file, you need to make an account with BGG. Once you have an account, you can download this file from the API explanation page.
 
 Import the following packages:
 ```
@@ -62,7 +62,7 @@ ids = ids[0:1000]
 
 ```
 
-Then set up portions of the api url using the code referenced above:
+Then set up portions of the API url using the code referenced above:
 ```
 baseurl = "https://boardgamegeek.com/xmlapi2"
 endpoint = "/thing?id="
@@ -70,6 +70,7 @@ parameter1 = str(ids[0])
 parameter2 = "&stats=1&marketplace=1"
 ```
 
+## Initialize the data fields
 Then initialize the data fields we want. These include the board game name, the year it was released, minimum number of players, maximum number of players, the estimated playing time, the minimum age, the number of accessories, the number of users who gave a rating, the average rating, the Bayes rating (which is the average rating with 30 average ratings tacked on to prevent new board games with high ratings from taking over rankings), the standard deviation of the ratings, and the average USD price of games selling in the marketplace as of November 12.
 
 ```
@@ -87,8 +88,9 @@ stddev = []
 avg_USD_price = []
 ```
 
-Finally, we need to loop through our list of IDs to pull the XML file for each board game, and pull the data we want from the XML file. A for loop is not the most time effective, but it was the best way I could think of to pull the api for each ID. Notice that there is a request delay of 10 seconds so requests don't get throttled. For the most part, this code uses Bautiful Soup to pull much of the data. USD price data is calulated by summing up all the listings in USD dollars and then dividing it by the number of listings.
-**Warning: This takes a long time to run.**
+## Pulling and scraping the data
+Finally, we need to loop through our list of IDs to pull the XML file for each board game, and pull the data we want from the XML file. A for loop is not the most time effective, but it was the best way I could think of to pull the API for each ID. Notice that there is a request delay of 10 seconds so requests don't get throttled. For the most part, this code uses Beautiful Soup to pull much of the data. USD price data is calulated by summing up all the listings in USD dollars and then dividing it by the number of listings.
+**Warning: This takes a long time to run. I only pulled the top 1000 rated games because of the time it took to pull this data.**
 
 ```
 for x in range(0,len(ids)):
@@ -121,7 +123,7 @@ for x in range(0,len(ids)):
         avg_USD_price.append(sum(usd_prices)/len(usd_prices))
 
 ```
-Finally, we can create a data frame from all these lists
+Finally, we can create a data frame from all these lists.
 
 ```
 boardGames = pd.DataFrame({"Title": name, "Year Published": yearpublished, "Min Players": minplayers, "Max Players": maxplayers, "Playing Time": playingtime, "Age Minimum": minage, "Number of Accessories": accessory_num, "Number of Ratings": users_rated, "Average Rating": averagescore, "Bayes Rating": bayesaveragescore, "Standard Deviation": stddev, "Average USD Price": avg_USD_price})
@@ -149,6 +151,6 @@ boardGames.to_csv("boardgamesdata.csv", index = False)
 The first five rows of the resulting data frame should look something like this:
 ![Boardgames dataframe](/assets/images/BoardGamesDataframe.png)
 
-Congratulations! We now have data for the top 1000 board games that we can now explore. In the next article, we'll explore this data to find what features these popular board games share.
+Congratulations! We now have data for the top 1000 board games that we can now explore. In the [next article](https://bradenmcritchfield.github.io/2023/12/12/Board-Game-Bonanza-Data-Collection.html), we'll explore this data to find what features these popular board games share.
 
 Visit [my repository](https://github.com/bradenmcritchfield/semester_project/tree/main/DataProject) for the data and jupyter notebook to replicate this process.
