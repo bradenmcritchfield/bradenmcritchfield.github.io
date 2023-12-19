@@ -4,5 +4,5 @@ title: About
 permalink: /about/
 ---
 
-Change this text with information about me and my blog.
+This blog is ran by Braden Critchfield. Its purpose is to explore different questions I have through data.
 
