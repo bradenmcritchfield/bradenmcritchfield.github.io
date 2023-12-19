@@ -151,6 +151,6 @@ boardGames.to_csv("boardgamesdata.csv", index = False)
 The first five rows of the resulting data frame should look something like this:
 ![Boardgames dataframe](/assets/images/BoardGamesDataframe.png)
 
-Congratulations! We now have data for the top 1000 board games that we can now explore. In the [next article](https://bradenmcritchfield.github.io/2023/12/12/Board-Game-Bonanza-Data-Collection.html), we'll explore this data to find what features these popular board games share.
+Congratulations! We now have data for the top 1000 board games that we can now explore. In the [next article](https://bradenmcritchfield.github.io/2023/12/13/Board-Game-Bonanza-EDA.html), we'll explore this data to find what features these popular board games share.
 
 Visit [my repository](https://github.com/bradenmcritchfield/semester_project/tree/main/DataProject) for the data and jupyter notebook to replicate this process.
